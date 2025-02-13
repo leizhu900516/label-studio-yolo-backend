@@ -1,6 +1,8 @@
 ## Before using this repository!
 The labels in `model.py` are specific to my project, so please replace them with your own labels and add your trained model weights `best.pt` into the same directory with `model.py`. Also remember to copy/update the contents of your `.env` file to include the variables defined in `.env.example`. (:
 
+## 修改model.py中的predict逻辑代码即可，配置正确的模型best.pt的地址和label-stdio的地址，就能正常使用，具体可查看_wsgi.py文件和model.py文件中注释
+
 ## Quickstart
 Build and start Machine Learning backend on `http://localhost:9090`
 
