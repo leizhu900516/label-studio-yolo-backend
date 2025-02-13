@@ -3,7 +3,7 @@ import requests, os
 from ultralytics import YOLO
 from PIL import Image
 from io import BytesIO
-
+# 这里需要更改为实际的label-studio的地址和token
 LS_URL = os.environ['LABEL_STUDIO_BASEURL']
 LS_API_TOKEN = os.environ['LABEL_STUDIO_API_TOKEN']
 
@@ -15,7 +15,9 @@ class YOLOv8Model(LabelStudioMLBase):
         from_name, schema = list(self.parsed_label_config.items())[0]
         self.from_name = from_name
         self.to_name = schema['to_name'][0]
+        # 替换自己模型中定义的类别名称
         self.labels = ['Edible', 'Inedible', 'Visual defects']
+        # 指定模型的绝对路径地址
         self.model = YOLO("best.pt")
 
     def predict(self, tasks, **kwargs):
